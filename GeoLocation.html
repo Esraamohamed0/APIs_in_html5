@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h2>Geolocation</h2>
+    <button onclick="getLoc()">share location</button>
+
+    <script>
+        function getLoc() {
+        navigator.geolocation.getCurrentPosition(showLoc, showErr, options);
+      }
+      function showLoc(e) {
+        var long = e.coords.longitude;
+        var lat = e.coords.latitude;
+        console.log(e, long, lat);
+        location.assign("http://maps.google.com/maps?q" + lat + ",+" + long);
+      }
+      function showErr(x) {
+        switch (x.code) {
+          case 0:
+            console.log(x.message);
+            break;
+          case 1:
+            console.log(x.message);
+            break;
+          case 2:
+            console.log(x.message);
+            break;
+          case 3:
+            console.log(x.message);
+            break;
+        }
+      }
+
+      var options = {};
+
+    </script>
+</body>
+</html>

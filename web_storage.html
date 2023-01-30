@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #jstext {
+            text-align: center;
+            font-size: 90px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        name:<input type="text" id="name"> <br><br>
+        age:<input type="number" id="age"> <br> <br>
+        email:<input type="email" id="email"><br><br>
+        <button id="btn">submit</button>
+    </form>
+    <script>
+        var btn = document.getElementById("btn");
+        console.log(btn);
+        btn.addEventListener('click',function(){
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var email = document.getElementById("email").value;
+        console.log(name,age,email);
+        localStorage.setItem("username",name);
+        localStorage.setItem("age",age);
+        localStorage.setItem("email",email);
+        console.log(localStorage.getItem("username"));
+        console.log(localStorage.getItem("age"));
+        console.log(localStorage.getItem("email"));
+        document.write("hey MR: "+localStorage.getItem("username")+"Your age is :"+localStorage.getItem("age")+" And your email is :"+localStorage.getItem("email"));
+        //document.write("<span style=\"color:green;font-size: 3em; font-family:arial, helvetica, sans-serif;text-align:center\">hey MR: " + localStorage.getItem("username")+ " Your age is :"+localStorage.getItem("age")+" And your email is :"+localStorage.getItem("email")"<\/span>");
+      });
+
+    </script>
+
+    
+</body>
+</html>
